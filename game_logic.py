@@ -34,7 +34,10 @@ def play_game():
     while mistakes < max_mistakes:
         display_game_state(mistakes, secret_word, guessed_letters)
 
-        guess = input("Guess a letter: ").lower()
+        guess = input("Guess a letter: ").lower().strip()
+        if len(guess) != 1 or not guess.isalpha():
+            print("Guess only one letter!")
+            continue
         print("You guessed:", guess)
         if guess in secret_word:
             guessed_letters.append(guess)
