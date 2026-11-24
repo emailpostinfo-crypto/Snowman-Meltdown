@@ -45,11 +45,23 @@ def play_game():
             mistakes += 1
         if all(letter in guessed_letters for letter in secret_word):
             display_game_state(mistakes, secret_word, guessed_letters)
-            print("Der Schneeman wurde gerettet!")
+            print("The snowman was saved!")
             break
 
 
     if mistakes == max_mistakes:
         print(STAGES[mistakes])
-        print("Der Schneeman wurde nicht gerettet.")
-        print(f"Das gesuchte Wort war: {secret_word}")
+        print("The snowman was not saved!")
+        print(f"The searched word was: {secret_word}")
+
+
+def play_again():
+    print("\nThe game is over.\n")
+    while True:
+        answer = input("Do you want to play again? Insert 'yes' or 'no': ").lower().strip()
+        if answer == "yes":
+            return True
+        elif answer == "no":
+            return False
+        else:
+            print("Invalid input. You must insert 'yes' or 'no'")
