@@ -1,10 +1,9 @@
 import game_logic
 
-
 def main():
     while True:
         game_logic.play_game()
-        if game_logic.play_again() == False:
+        if not game_logic.play_again():
             break
 
 

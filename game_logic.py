@@ -33,7 +33,6 @@ def play_game():
 
     while mistakes < max_mistakes:
         display_game_state(mistakes, secret_word, guessed_letters)
-
         guess = input("Guess a letter: ").lower().strip()
         if len(guess) != 1 or not guess.isalpha():
             print("Guess only one letter!")
@@ -47,8 +46,6 @@ def play_game():
             display_game_state(mistakes, secret_word, guessed_letters)
             print("The snowman was saved!")
             break
-
-
     if mistakes == max_mistakes:
         print(STAGES[mistakes])
         print("The snowman was not saved!")
@@ -58,7 +55,9 @@ def play_game():
 def play_again():
     print("\nThe game is over.\n")
     while True:
-        answer = input("Do you want to play again? Insert 'yes' or 'no': ").lower().strip()
+        answer = input(
+            "Do you want to play again? Insert 'yes' or 'no': "
+        ).lower().strip()
         if answer == "yes":
             return True
         elif answer == "no":
