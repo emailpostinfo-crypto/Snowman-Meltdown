@@ -29,7 +29,7 @@ def play_game():
     guessed_letters = []
     mistakes = 0
     max_mistakes = len(STAGES) - 1
-    print("Welcome to Snowman Meltdown!")
+    print("\nWelcome to Snowman Meltdown!")
 
     while mistakes < max_mistakes:
         display_game_state(mistakes, secret_word, guessed_letters)
